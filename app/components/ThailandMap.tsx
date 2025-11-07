@@ -50,7 +50,7 @@ export default function ThailandMap({
   };
 
   useEffect(() => {
-    if (!mapContainer.current || mapInstance.current) return;
+    if (!mapContainer.current) return;
 
     console.log("Initializing map...");
 
@@ -59,6 +59,14 @@ export default function ThailandMap({
       if (!mapContainer.current) {
         console.log("Map container not found");
         return;
+      }
+
+      // Clean up existing map if it exists
+      if (mapInstance.current) {
+        console.log("Cleaning up existing map...");
+        mapInstance.current.remove();
+        mapInstance.current = null;
+        geoJsonLayer.current = null;
       }
 
       console.log("Creating map instance...");
@@ -168,33 +176,17 @@ export default function ThailandMap({
 
     return () => {
       clearTimeout(timeoutId);
+      if (geoJsonLayer.current) {
+        geoJsonLayer.current.clearLayers();
+        geoJsonLayer.current = null;
+      }
       if (mapInstance.current) {
         mapInstance.current.remove();
         mapInstance.current = null;
       }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // Update styles when data changes
-  useEffect(() => {
-    if (!geoJsonLayer.current) return;
-
-    geoJsonLayer.current.eachLayer((layer: L.Layer) => {
-      const featureLayer = layer as L.Path & {
-        feature: { properties: { pro_th: string } };
-      };
-      const provinceName = featureLayer.feature.properties.pro_th;
-      const provinceData = provinceDataMap.get(provinceName);
-      const score = provinceData ? parseFloat(provinceData.MFI_Score) : 0;
-
-      featureLayer.setStyle({
-        fillColor: getColor(score),
-        fillOpacity: getOpacity(score),
-      });
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data]);
+  }, [data]); // Re-run when data changes
 
   return (
     <Box position="relative" w="100%" h="100%">
