@@ -95,6 +95,7 @@ vercel --prod
 ### Deployment Configuration
 
 The app includes a `vercel.json` file with optimal settings:
+
 - Framework: Next.js (auto-detected)
 - Region: Singapore (sin1) for best performance in Thailand
 - No environment variables required (uses static CSV files)
@@ -143,6 +144,7 @@ The MFI data includes:
 - **Friendliness tier classification** (Top Tier, High, Medium, Low)
 
 Data files located in `/public/data/`:
+
 - `MFI_Results_2025_Enhanced.csv` - Provincial MFI scores and rankings
 - `JUMPSTART - MFI - [THAI]MFI Data Collection Sheet Structure.csv` - Raw data
 
@@ -177,6 +179,7 @@ Data files located in `/public/data/`:
 ## 🌐 Production Build
 
 Build is optimized and production-ready:
+
 - ✅ No TypeScript errors
 - ✅ No ESLint warnings
 - ✅ All pages pre-rendered as static content (except dynamic province pages)
