@@ -82,9 +82,9 @@ export default function ThailandMap({
       // Add zoom controls at bottom right
       L.control.zoom({ position: "bottomright" }).addTo(map);
 
-      // Load GeoJSON
+      // Load GeoJSON (using smaller optimized file)
       console.log("Loading GeoJSON...");
-      fetch("/geojson/provinces.geojson")
+      fetch("/geojson/provinces-small.json")
         .then((response) => response.json())
         .then((geoData) => {
           console.log("GeoJSON loaded, adding to map...");
