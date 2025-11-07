@@ -92,7 +92,7 @@ export default function ThailandMap({
 
       // Load GeoJSON (using smaller optimized file)
       console.log("Loading GeoJSON...");
-      fetch("/geojson/provinces-small.json")
+      fetch("/geojson/provinces.geojson")
         .then((response) => response.json())
         .then((geoData) => {
           console.log("GeoJSON loaded, adding to map...");
