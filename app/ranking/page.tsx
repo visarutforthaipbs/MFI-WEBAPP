@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Papa from "papaparse";
+import { useState } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { useMFIData } from "../hooks/useMFIData";
+import { getScoreColor } from "../utils";
 import {
   Box,
   Heading,
@@ -21,33 +22,10 @@ const ThailandMap = dynamic(() => import("../components/ThailandMap"), {
   ssr: false,
 });
 
-interface MFIData {
-  Rank: string;
-  Province: string;
-  MFI_Score: string;
-  Score_Economic: string;
-  Score_Health: string;
-  Score_Family: string;
-  Score_Safety: string;
-  Score_Community: string;
-  Tier: string;
-}
-
 export default function RankingPage() {
   const router = useRouter();
-  const [mfiData, setMfiData] = useState<MFIData[]>([]);
+  const { data: mfiData } = useMFIData();
   const [searchTerm, setSearchTerm] = useState("");
-
-  useEffect(() => {
-    // Load MFI results
-    Papa.parse("/data/MFI_Results_2025_Enhanced.csv", {
-      download: true,
-      header: true,
-      complete: (results) => {
-        setMfiData(results.data as MFIData[]);
-      },
-    });
-  }, []);
 
   const filteredData = mfiData.filter(
     (item) =>
@@ -59,15 +37,6 @@ export default function RankingPage() {
   const handleProvinceClick = (provinceName: string) => {
     // Navigate to province detail page
     router.push(`/province/${encodeURIComponent(provinceName)}`);
-  };
-
-  // Get color based on MFI score (same as map)
-  const getScoreColor = (score: number) => {
-    if (score >= 40) return "#50E3C4"; // High - brand color
-    if (score >= 35) return "#75AFED"; // Upper-mid - light blue
-    if (score >= 30) return "#9BC5F2"; // Mid - lighter blue
-    if (score >= 25) return "#C2DCF7"; // Lower-mid - very light blue
-    return "#E8F2FC"; // Lowest - very pale blue
   };
 
   return (
@@ -88,7 +57,7 @@ export default function RankingPage() {
                 as="h1"
                 fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
                 fontWeight="bold"
-                color="#4C90E2"
+                color="#519acb"
               >
                 การจัดอันดับทั้ง 77 จังหวัด
               </Heading>

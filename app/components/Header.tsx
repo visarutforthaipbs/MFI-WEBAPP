@@ -2,6 +2,7 @@
 
 import { Box, Flex, Text, HStack } from "@chakra-ui/react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   return (
@@ -22,19 +23,17 @@ export default function Header() {
         px={{ base: "1.5rem", md: "2.5rem", lg: "4rem" }}
       >
         <Flex justify="space-between" align="center" flexWrap="wrap" gap={3}>
-          <HStack gap={2}>
-            <Box w="10px" h="10px" bg="#50E3C4" borderRadius="full" />
-            <Link href="/" style={{ textDecoration: "none" }}>
-              <Text
-                fontSize={{ base: "lg", md: "xl" }}
-                fontWeight="bold"
-                color="gray.800"
-                _hover={{ color: "#4C90E2" }}
-              >
-                MFI
-              </Text>
-            </Link>
-          </HStack>
+          <Link href="/" style={{ textDecoration: "none" }}>
+            <Box position="relative" w="120px" h="40px">
+              <Image
+                src="/logo/logo-mfi.svg"
+                alt="MFI Logo"
+                fill
+                style={{ objectFit: "contain", objectPosition: "left center" }}
+                priority
+              />
+            </Box>
+          </Link>
 
           <HStack gap={{ base: 3, md: 6 }} flexWrap="wrap">
             <Link href="/" style={{ textDecoration: "none" }}>
@@ -42,7 +41,7 @@ export default function Header() {
                 fontSize={{ base: "xs", md: "sm" }}
                 fontWeight="medium"
                 color="gray.600"
-                _hover={{ color: "#4C90E2" }}
+                _hover={{ color: "#519acb" }}
                 whiteSpace="nowrap"
               >
                 หน้าแรก
@@ -53,7 +52,7 @@ export default function Header() {
                 fontSize={{ base: "xs", md: "sm" }}
                 fontWeight="medium"
                 color="gray.600"
-                _hover={{ color: "#4C90E2" }}
+                _hover={{ color: "#519acb" }}
                 whiteSpace="nowrap"
               >
                 จัดอันดับ
@@ -64,7 +63,7 @@ export default function Header() {
                 fontSize={{ base: "xs", md: "sm" }}
                 fontWeight="medium"
                 color="gray.600"
-                _hover={{ color: "#4C90E2" }}
+                _hover={{ color: "#519acb" }}
                 whiteSpace="nowrap"
               >
                 เกี่ยวกับ
@@ -75,7 +74,7 @@ export default function Header() {
                 fontSize={{ base: "xs", md: "sm" }}
                 fontWeight="medium"
                 color="gray.600"
-                _hover={{ color: "#4C90E2" }}
+                _hover={{ color: "#519acb" }}
                 whiteSpace="nowrap"
               >
                 วิธีการ
@@ -86,7 +85,7 @@ export default function Header() {
                 fontSize={{ base: "xs", md: "sm" }}
                 fontWeight="medium"
                 color="gray.600"
-                _hover={{ color: "#4C90E2" }}
+                _hover={{ color: "#519acb" }}
                 whiteSpace="nowrap"
               >
                 ร่วมงาน

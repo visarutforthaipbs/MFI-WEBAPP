@@ -26,9 +26,12 @@ The Migrant Friendly Index (MFI) is a comprehensive measurement tool that evalua
 - 📈 **Detailed Analytics** - In-depth province analysis with radar charts (Chart.js)
 - 📱 **Mobile-First Design** - Fully responsive across all devices
 - 🔍 **Search & Filter** - Find provinces quickly with real-time search
-- 🎨 **Custom Theme** - Brand colors (#50E3C4 and #4C90E2)
+- 🎨 **Custom Theme** - Brand colors (#8aba8a and #519acb)
 - 🇹🇭 **Full Thai Language** - Complete Thai language support
-- ✨ **Custom Font** - DB HelvethaicaX Thai font
+- ✨ **Custom Font** - Mitr Google Font
+- 📱 **Responsive Design** - Mobile-first approach
+- 🗺️ **Interactive Maps** - Leaflet.js integration
+
 - ⚡ **Performance Optimized** - React.memo, code splitting, and optimized rendering
 
 ## 🛠️ Tech Stack
@@ -39,7 +42,7 @@ The Migrant Friendly Index (MFI) is a comprehensive measurement tool that evalua
 - **Charts**: Chart.js (radar charts)
 - **Data**: PapaParse (CSV parsing)
 - **Language**: TypeScript
-- **Styling**: Custom CSS with Thai fonts (DB HelvethaicaX)
+- **Styling**: Custom CSS with Thai fonts (Mitr)
 
 ## 🚀 Getting Started
 
@@ -122,7 +125,7 @@ mfi-webapp/
 ├── public/
 │   ├── data/               # CSV data files (2024)
 │   ├── geojson/            # Thailand provinces GeoJSON
-│   └── fonts/              # DB HelvethaicaX fonts
+│   ├── fonts/              # Custom fonts
 ├── vercel.json             # Vercel deployment config
 ├── next.config.ts          # Next.js configuration
 ├── tsconfig.json           # TypeScript configuration
@@ -189,7 +192,8 @@ Build is optimized and production-ready:
 
 - This application displays data from **2024** (ข้อมูล ปี 2024)
 - All text and content are in Thai language
-- Uses DB HelvethaicaX custom font for authentic Thai typography
+- - Uses Mitr Google font for authentic Thai typography
+- Custom color palette matching the brand identity
 
 ## 👥 Credits
 

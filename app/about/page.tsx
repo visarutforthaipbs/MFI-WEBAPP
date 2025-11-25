@@ -1,6 +1,7 @@
 "use client";
 
 import { Box, Heading, Text, VStack, HStack, Flex } from "@chakra-ui/react";
+import Image from "next/image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -16,15 +17,24 @@ export default function AboutPage() {
       >
         <VStack gap={12} align="stretch">
           {/* Page Title */}
-          <Heading
-            as="h1"
-            fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
-            fontWeight="bold"
-            color="#4C90E2"
-            textAlign="center"
-          >
-            เกี่ยวกับโครงการ MFI
-          </Heading>
+          <Box position="relative" mb={10} borderRadius="2xl" overflow="hidden">
+            <Image
+              src="/about-hero-section.svg"
+              alt="About MFI Hero"
+              width={1200}
+              height={600}
+              style={{ width: "100%", height: "auto" }}
+              priority
+            />
+            <Box
+              position="absolute"
+              top="50%"
+              left="50%"
+              transform="translate(-50%, -50%)"
+              textAlign="center"
+              width="100%"
+            ></Box>
+          </Box>
 
           {/* Our Mission Section */}
           <VStack gap={6} align="stretch">
@@ -32,7 +42,7 @@ export default function AboutPage() {
               as="h2"
               fontSize={{ base: "2xl", md: "3xl" }}
               fontWeight="bold"
-              color="#4C90E2"
+              color="#519acb"
             >
               พันธกิจของเรา
             </Heading>
@@ -58,7 +68,7 @@ export default function AboutPage() {
               <HStack align="start" gap={3}>
                 <Text
                   fontSize={{ base: "md", md: "lg" }}
-                  color="#4C90E2"
+                  color="#519acb"
                   fontWeight="bold"
                 >
                   •
@@ -74,7 +84,7 @@ export default function AboutPage() {
               <HStack align="start" gap={3}>
                 <Text
                   fontSize={{ base: "md", md: "lg" }}
-                  color="#4C90E2"
+                  color="#519acb"
                   fontWeight="bold"
                 >
                   •
@@ -91,7 +101,7 @@ export default function AboutPage() {
               <HStack align="start" gap={3}>
                 <Text
                   fontSize={{ base: "md", md: "lg" }}
-                  color="#4C90E2"
+                  color="#519acb"
                   fontWeight="bold"
                 >
                   •
@@ -108,7 +118,7 @@ export default function AboutPage() {
               <HStack align="start" gap={3}>
                 <Text
                   fontSize={{ base: "md", md: "lg" }}
-                  color="#4C90E2"
+                  color="#519acb"
                   fontWeight="bold"
                 >
                   •
@@ -131,7 +141,7 @@ export default function AboutPage() {
               as="h2"
               fontSize={{ base: "2xl", md: "3xl" }}
               fontWeight="bold"
-              color="#4C90E2"
+              color="#519acb"
             >
               ฉบับ "เริ่มต้น" จากข้อมูลปี 2024
             </Heading>
@@ -167,7 +177,7 @@ export default function AboutPage() {
               as="h2"
               fontSize={{ base: "2xl", md: "3xl" }}
               fontWeight="bold"
-              color="#4C90E2"
+              color="#519acb"
             >
               ดัชนีนี้คืออะไร vs ไม่ใช่อะไร
             </Heading>
@@ -182,18 +192,18 @@ export default function AboutPage() {
 
             {/* What it IS */}
             <Box
-              bg="#50E3C4"
+              bg="#8aba8a"
               bg-opacity={0.1}
               p={{ base: 6, md: 8 }}
               borderRadius="lg"
               borderLeft="4px solid"
-              borderColor="#50E3C4"
+              borderColor="#8aba8a"
             >
               <Heading
                 as="h3"
                 fontSize={{ base: "xl", md: "2xl" }}
                 fontWeight="bold"
-                color="#4C90E2"
+                color="#519acb"
                 mb={4}
               >
                 ✅ ดัชนีนี้คือ:
@@ -238,18 +248,18 @@ export default function AboutPage() {
 
             {/* What it IS NOT */}
             <Box
-              bg="#4C90E2"
+              bg="#519acb"
               bg-opacity={0.1}
               p={{ base: 6, md: 8 }}
               borderRadius="lg"
               borderLeft="4px solid"
-              borderColor="#4C90E2"
+              borderColor="#519acb"
             >
               <Heading
                 as="h3"
                 fontSize={{ base: "xl", md: "2xl" }}
                 fontWeight="bold"
-                color="#4C90E2"
+                color="#519acb"
                 mb={4}
               >
                 ❌ ดัชนีนี้ไม่ใช่:

@@ -63,9 +63,9 @@ export default function MapBackground() {
         <rect width="100%" height="100%" fill="url(#grid)" />
 
         {/* Subtle circles for visual interest */}
-        <circle cx="15%" cy="20%" r="150" fill="rgba(80, 227, 196, 0.03)" />
-        <circle cx="85%" cy="70%" r="200" fill="rgba(76, 144, 226, 0.03)" />
-        <circle cx="50%" cy="50%" r="250" fill="rgba(80, 227, 196, 0.02)" />
+        <circle cx="15%" cy="20%" r="150" fill="rgba(138, 186, 138, 0.03)" />
+        <circle cx="85%" cy="70%" r="200" fill="rgba(81, 154, 203, 0.03)" />
+        <circle cx="50%" cy="50%" r="250" fill="rgba(138, 186, 138, 0.02)" />
       </svg>
     </Box>
   );

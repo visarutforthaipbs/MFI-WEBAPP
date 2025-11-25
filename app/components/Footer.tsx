@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <Box
       as="footer"
-      bg="linear-gradient(135deg, #4C90E2 0%, #50E3C4 100%)"
+      bg="linear-gradient(135deg, #519acb 0%, #8aba8a 100%)"
       color="white"
       py={12}
     >

@@ -4,18 +4,7 @@ import { useEffect, useRef } from "react";
 import { Box, Text, HStack, VStack } from "@chakra-ui/react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-
-interface MFIData {
-  Rank: string;
-  Province: string;
-  MFI_Score: string;
-  Score_Economic: string;
-  Score_Health: string;
-  Score_Family: string;
-  Score_Safety: string;
-  Score_Community: string;
-  Tier: string;
-}
+import { MFIData, getScoreColor } from "../utils";
 
 interface ThailandMapProps {
   data: MFIData[];
@@ -34,15 +23,6 @@ export default function ThailandMap({
 
   // Create a map of province names to MFI data
   const provinceDataMap = new Map(data.map((item) => [item.Province, item]));
-
-  // Get color based on MFI score
-  const getColor = (score: number) => {
-    if (score >= 40) return "#50E3C4"; // High - brand color
-    if (score >= 35) return "#75AFED"; // Upper-mid - light blue
-    if (score >= 30) return "#9BC5F2"; // Mid - lighter blue
-    if (score >= 25) return "#C2DCF7"; // Lower-mid - very light blue
-    return "#E8F2FC"; // Lowest - very pale blue
-  };
 
   // Get opacity based on score for gradient effect
   const getOpacity = (score: number) => {
@@ -107,7 +87,7 @@ export default function ThailandMap({
                 : 0;
 
               return {
-                fillColor: getColor(score),
+                fillColor: getScoreColor(score),
                 weight: 1,
                 opacity: 1,
                 color: "white",
@@ -123,7 +103,7 @@ export default function ThailandMap({
                   const layer = e.target;
                   layer.setStyle({
                     weight: 2,
-                    color: "#4C90E2",
+                    color: "#519acb",
                     fillOpacity: 0.9,
                   });
                 },
@@ -149,7 +129,7 @@ export default function ThailandMap({
               if (provinceData) {
                 layer.bindTooltip(
                   `
-                <div style="font-family: 'DB HelvethaicaX', sans-serif; padding: 4px;">
+                <div style="font-family: var(--font-mitr), sans-serif; padding: 4px;">
                   <strong>${provinceName}</strong><br/>
                   คะแนน MFI: ${parseFloat(provinceData.MFI_Score).toFixed(2)}
                 </div>
@@ -221,7 +201,7 @@ export default function ThailandMap({
               <Box
                 w={{ base: "16px", md: "20px" }}
                 h="15px"
-                bg="#50E3C4"
+                bg="#8aba8a"
                 borderRadius="sm"
               />
               <Text fontSize="xs">40+ (สูงมาก)</Text>

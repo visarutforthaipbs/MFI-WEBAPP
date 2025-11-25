@@ -20,7 +20,7 @@ export default function GetInvolvedPage() {
             as="h1"
             fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
             fontWeight="bold"
-            color="#4C90E2"
+            color="#519acb"
             textAlign="center"
           >
             ขั้นตอนต่อไป? ช่วยเราสร้างฉบับที่ 2
@@ -50,7 +50,7 @@ export default function GetInvolvedPage() {
 
           {/* For NGOs, CBOs, and Academics */}
           <Box
-            bg="linear-gradient(135deg, #50E3C4 0%, #4C90E2 100%)"
+            bg="linear-gradient(135deg, #8aba8a 0%, #519acb 100%)"
             p={{ base: 8, md: 10 }}
             borderRadius="xl"
             color="white"
@@ -76,7 +76,7 @@ export default function GetInvolvedPage() {
                   <Button
                     size={{ base: "lg", md: "xl" }}
                     bg="white"
-                    color="#4C90E2"
+                    color="#519acb"
                     _hover={{ bg: "gray.100" }}
                     fontSize={{ base: "md", md: "lg" }}
                     fontWeight="bold"
@@ -92,7 +92,7 @@ export default function GetInvolvedPage() {
 
           {/* For Citizen Journalists & Community Members */}
           <Box
-            bg="linear-gradient(135deg, #4C90E2 0%, #50E3C4 100%)"
+            bg="linear-gradient(135deg, #519acb 0%, #8aba8a 100%)"
             p={{ base: 8, md: 10 }}
             borderRadius="xl"
             color="white"
@@ -117,7 +117,7 @@ export default function GetInvolvedPage() {
                   <Button
                     size={{ base: "lg", md: "xl" }}
                     bg="white"
-                    color="#4C90E2"
+                    color="#519acb"
                     _hover={{ bg: "gray.100" }}
                     fontSize={{ base: "md", md: "lg" }}
                     fontWeight="bold"
@@ -137,14 +137,14 @@ export default function GetInvolvedPage() {
             p={{ base: 8, md: 10 }}
             borderRadius="xl"
             borderWidth={2}
-            borderColor="#4C90E2"
+            borderColor="#519acb"
           >
             <VStack gap={6} align="stretch">
               <Heading
                 as="h2"
                 fontSize={{ base: "2xl", md: "3xl" }}
                 fontWeight="bold"
-                color="#4C90E2"
+                color="#519acb"
               >
                 สำหรับผู้กำหนดนโยบายและนักข่าว
               </Heading>
@@ -161,7 +161,7 @@ export default function GetInvolvedPage() {
                 <Link href="mailto:media@webelong.org">
                   <Button
                     size={{ base: "lg", md: "xl" }}
-                    bg="#4C90E2"
+                    bg="#519acb"
                     color="white"
                     _hover={{ bg: "#3a7bc8" }}
                     fontSize={{ base: "md", md: "lg" }}
@@ -183,7 +183,7 @@ export default function GetInvolvedPage() {
                 as="h2"
                 fontSize={{ base: "2xl", md: "3xl" }}
                 fontWeight="bold"
-                color="#4C90E2"
+                color="#519acb"
               >
                 มาร่วมสร้างอนาคตที่เป็นมิตรต่อแรงงานข้ามชาติไปด้วยกัน
               </Heading>

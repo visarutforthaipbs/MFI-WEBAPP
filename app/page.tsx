@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Papa from "papaparse";
 import dynamic from "next/dynamic";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MapBackground from "./components/MapBackground";
+import { useMFIData } from "./hooks/useMFIData";
 import {
   Box,
   Heading,
@@ -36,35 +36,8 @@ const ThailandMap = dynamic(() => import("./components/ThailandMap"), {
   ),
 });
 
-interface MFIData {
-  Rank: string;
-  Province: string;
-  MFI_Score: string;
-  Score_Economic: string;
-  Score_Health: string;
-  Score_Family: string;
-  Score_Safety: string;
-  Score_Community: string;
-  Tier: string;
-  Score_StdDev: string;
-  Score_CV: string;
-}
-
 export default function Home() {
-  const [data, setData] = useState<MFIData[]>([]);
-
-  useEffect(() => {
-    fetch("/data/MFI_Results_2025_Enhanced.csv")
-      .then((response) => response.text())
-      .then((csv) => {
-        Papa.parse<MFIData>(csv, {
-          header: true,
-          complete: (results) => {
-            setData(results.data.filter((row) => row.Province));
-          },
-        });
-      });
-  }, []);
+  const { data } = useMFIData();
 
   const topProvinces = data.slice(0, 5);
 
@@ -336,7 +309,7 @@ export default function Home() {
               <Link href="/ranking" style={{ textDecoration: "none" }}>
                 <Button
                   size="lg"
-                  bg="linear-gradient(135deg, #4C90E2 0%, #50E3C4 100%)"
+                  bg="linear-gradient(135deg, #519acb 0%, #8aba8a 100%)"
                   color="white"
                   fontWeight="bold"
                   px={8}
@@ -408,7 +381,7 @@ export default function Home() {
                   style={{
                     display: "inline-block",
                     padding: "16px 32px",
-                    backgroundColor: "#2AC5A4",
+                    backgroundColor: "#8aba8a",
                     color: "white",
                     fontWeight: "bold",
                     fontSize: "18px",
